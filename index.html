@@ -4,136 +4,207 @@
     <meta charset="UTF-8">
     <meta name="author" content="Marissa Corleto">
     <meta name="description" content="My portfolio">
-    <title>Marissa Corleto &#124; Full Stack Developer Apprentice</title>
-    <link rel="icon" href="Images/icon-html.png" type="Image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marissa Corleto | Full Stack Developer Apprentice</title>
+    <link rel="icon" href="Images/icon-html.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-    <header class="headerprincipal">
-        <nav class="nav-container">
-            <div class="logo">
-                <img src="Images/LogoInitials.png" alt="Logo" width="50" height="50">
+<body class="d-flex flex-column min-vh-100" data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="0" tabindex="0">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Images/LogoInitials.png" alt="Logo" id="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <ul class="links1">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact me!</a></li>
-            </ul>
-            <ul class="links2">
-                <li><a target="_blank" href="https://www.linkedin.com/in/marissa-corleto/"><img src="Images/Linkedinlogo1.png" alt="linkedinlogosmall" width="65"></a></li>
-                <li><a target="_blank" href="https://www.instagram.com/marissakundera/"><img src="Images/Instagramlogo1.png" alt="instagramlogosmall" width="65"></a></li>
-            </ul>
-        </nav>
-    </header>    
+        </div>
+    </nav>
 
-    <main class="box">
-        <section class="homepage" id="homepage">
-            <div class="container">
-                <div class="portrait">
-                    <figure class="profile-pic">
-                        <img id="profileImage" src="Images/Profilephoto1.jpg" alt="profile photo" title="Marissa Corleto" width="400" height=475>
-                        <figcaption class="offscreen">Marissa Corleto</figcaption>
-                    </figure>
+    <!-- Home Section -->
+    <div id="home" class="container-fluid homepage d-flex align-items-center justify-content-center flex-grow-1">
+        <div class="row w-100 align-items-center justify-content-center">
+            <div class="col-md-6 text-center text-content">
+                <h1 class="mb-4 mt-3">I'm <span>Marissa Corleto</span></h1>
+                <h2 class="mb-4">Full Stack Developer Apprentice</h2>
+                <p><a href="https://www.linkedin.com/in/marissa-corleto/" target="_blank" class="btn btn-primary py-3 px-4 rounded-pill">Hire me</a> <a href="#projects" class="btn btn-outline-light py-3 px-4 rounded-pill">My works</a></p>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center">
+                <img src="Images/Profile2.png" alt="Profile Photo Right" class="profile-image-right">
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="container-fluid about-section d-flex align-items-center justify-content-center flex-grow-1">
+        <div class="row w-100 align-items-center justify-content-center">
+            <div class="col-md-3 d-flex justify-content-center">
+                <img src="Images/Profile3.png" alt="Profile Photo Left" class="profile-image-left">
+            </div>
+            <div class="col-md-6 text-content about-content">
+                <h2 class="about-title mb-4">About Me</h2>
+                <p>Hi there! I'm Marissa and I'm excited to share a bit about myself. I have a pretty diverse background. I majored in Cultural Studies, Literature, and Linguistics, which gives me a unique way of looking at things. I've gone from crafting delicious pastries as a Pastry Chef to diving into the tech world as a Full Stack Developer Apprentice.</p>
+                <p>I'm really excited about the potential to make a big impact in financial planning and supply chain management using Anaplan. I'm eager to explore innovative applications that can streamline these processes and bring about some real change.</p>
+                <p>When it comes to web development, I'm all about enhancing user experiences with HTML, CSS, JavaScript, and Bootstrap 5. I also love automating tasks with tools like Selenium to extract and use data in cool ways.</p>
+                <p>My portfolio is a mix of creative and technical projects, showing my commitment to learning and growing continuously. When I'm not working, you'll often find me on my yoga mat, at rock concert, or just enjoying some great tunes. I'm all about inspiration, constant movement, and balance.</p>
+                <p>Thanks for stopping by my portfolio! I'd love to connect and see how we can create something amazing together.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="container projects-section my-5">
+        <h2 class="projects-title text-center mb-5">Projects</h2>
+        <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="dummy1.html" target="_blank">
+                                    <img src="Images/asanas.png" class="card-img-top project-image" alt="Yoga Sequence Builder">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Yoga Sequence Builder</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="https://www.vb-cg.com/post/apex-model-builders-by-vbcg" target="_blank">
+                                    <img src="Images/ApexVBCG.jpg" class="card-img-top project-image" alt="L2 Certified Model Builder">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">L2 Certified Model Builder</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="https://www.vb-cg.com/post/vbcg-presents-auto-builder" target="_blank">
+                                    <img src="Images/AnaplanAutoBuilder.png" class="card-img-top project-image" alt="Auto-Builder for Anaplan">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Auto-Builder for Anaplan</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="text">
-                    <h1>Marissa Corleto</h1>
-                    <img src="Images/simpledivider.png" alt="simple divider">
-                    <h2>Portfolio</h2>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="dummy2.html" target="_blank">
+                                    <img src="Images/finder.jpg" class="card-img-top project-image" alt="Concert Finder App">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Concert Finder App</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="dummy3.html" target="_blank">
+                                    <img src="Images/blog.jpg" class="card-img-top project-image" alt="Let them eat cake (Blog)">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Let them eat cake (Blog)</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="dummy1.html" target="_blank">
+                                    <img src="Images/asanas.png" class="card-img-top project-image" alt="Yoga Sequence Builder">
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Yoga Sequence Builder</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
-        <img src="Images/simpledivider.png" alt="simple divider" class="divider">
-
-        <section class="about" id="about">
-            <h2 class="htwo">About:</h2>
-            <p class="introduction">
-                Music enthusiastic and part time Yoga instructor, and now, with the help of
-                <br>🌸Code Blossom🌸<br>
-                Full Stack Web Developer Apprentice.
-            </p>
-            <br>
-            <div class="me">
-                <img src="Images/concert.jpg" alt="concert" width="300" height="375" class="concert">
-                <img src="Images/yoga.jpg" alt="yoga" width="300" height="375" class="yoga">
-                <img src="Images/cblossom.jpg" alt="codeblossom" width="800" height="375" class="codeblossom wide">
-            </div>
-        </section>
-
-        <img src="Images/simpledivider.png" alt="simple divider" class="divider">
-
-        <section class="projects" id="projects">
-            <h2 class="htwo">Projects:</h2>
-            <div class="project-container">
-                <div class="project-item">
-                    <a href="https://www.vb-cg.com/post/apex-model-builders-by-vbcg" target="_blank">
-                        <img src="Images/ApexVBCG.jpg" alt="Apex Model Builders by VBCG" class="project-preview">
-                    </a>
-                    <p>Apex Model Builders by VBCG</p>
-                </div>
-                <div class="project-item">
-                <a href="dummy1.html" target="_blank">
-                    <img src="Images/asanas.png" alt="Yoga Sequence Builder" class="project-preview">
-                </a>
-                <p>Yoga Sequence Builder</p>
-                </div>
-                <div class="project-item">
-                <a href="dummy2.html" target="_blank">
-                    <img src="Images/finder.jpg" alt="Concert Finder App" class="project-preview">
-                </a>
-                <p>Concert Finder App</p>
+    <!-- Footer Section -->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024, Marissa Corleto</p>
                 </div>
             </div>
-            <img src="Images/simpledivider.png" alt="simple divider" class="divider">
-        </section>
-
-        <section class="contact" id="contact">
-            <h2 class="htwo">Contact me!</h2>
-            <br>
-            <p class="socialmedia">For any questions, concerns or comments.</p>
-            <br>
-            <p class="socialmedia">Get in touch with me through my social media:</p>
-            <div class="socialmedia">
-                <a target="_blank" href="https://www.linkedin.com/in/marissa-corleto/"><img src="Images/linkedinlogo2.png" alt="linkedinlogo2" width="300"></a>
-                <a target="_blank" href="https://www.instagram.com/marissakundera/"><img src="Images/instagramlogo2.png" alt="Instagramlogo2" width="300"></a>
-            </div>
-
-            <img src="Images/simpledivider.png" alt="simple divider" class="divider">
-            <p class="or">Or...</p>
-            <img src="Images/simpledivider.png" alt="simple divider" class="divider">
-            <p class="prefer">If you prefer to reach me via this page... send me a message here!</p>
-            <form action="https://httpbin.org/get" method="get">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Youremail@domain.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea name="message" id="message" placeholder="Tell me what's on your mind" required></textarea>
-                </div>
-                <button type="submit">Send!</button>
-            </form>            
-        </section>
-    </main>
-
-    <footer class="footer">
-        <ul class="footlinks">
-            <li class="signature">&copy; 2024, Marissa Corleto</li>
-            <li class="back"><a href="#"><img src="Images/LogoInitials.png" alt="Logo" class="footer-logo"> Back to Home!</a></li>
-            <li class="right-links">
-                <a target="_blank" href="https://www.linkedin.com/in/marissa-corleto/"><img src="Images/Linkedinlogo1.png" alt="linkedinlogosmall" width="65"></a>
-                <a target="_blank" href="https://www.instagram.com/marissakundera/"><img src="Images/Instagramlogo1.png" alt="instagramlogosmall" width="65"></a>
-            </li>
-        </ul>
+        </div>
     </footer>
-    <button id="backToTop" title="Back to Top">Back to Top!</button>
+
+<!-- Side Panel -->
+<div id="contact-panel" class="contact-panel">
+    <div class="contact-panel-content">
+        <span class="close-btn">&times;</span>
+        <h2>Contact Me</h2>
+        <p>You can contact me by filling out this form or by sending me a message through any of my social media.</p> <!-- New text added -->
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" autocomplete="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Your Message" autocomplete="off"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <div class="social-links mt-4">
+            <a href="https://www.linkedin.com/in/marissa-corleto/" target="_blank">
+                <img src="Images/Linkedinlogo1.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/marissakundera/" target="_blank">
+                <img src="Images/Instagramlogo1.png" alt="Instagram">
+            </a>
+            <a href="https://github.com/MarissaCorleto" target="_blank">
+                <img src="Images/Githublogo1.png" alt="GitHub">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top Button -->
+<a href="#home" id="back-to-top" class="btn btn-primary py-3 px-4 rounded-pill back-to-top">Back to Top</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/scripts.js"></script>
 </body>
 </html>

@@ -1,59 +1,58 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+document.addEventListener("DOMContentLoaded", function() {
+    const contactPanel = document.getElementById("contact-panel");
+    const logo = document.getElementById("logo");
+    const contactLink = document.querySelector(".nav-link[href='#contact']");
+    const closeBtn = document.querySelector(".close-btn");
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    // Open panel when hovering over logo
+    logo.addEventListener("mouseenter", function() {
+        contactPanel.style.width = "300px";
+    });
+
+    // Open panel when clicking the contact link
+    contactLink.addEventListener("click", function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        contactPanel.style.width = "300px";
+    });
+
+    // Close panel when clicking the close button
+    closeBtn.addEventListener("click", function() {
+        contactPanel.style.width = "0";
+    });
+
+    // Close panel when clicking outside of it
+    document.addEventListener("click", function(event) {
+        if (!contactPanel.contains(event.target) && !logo.contains(event.target) && !contactLink.contains(event.target)) {
+            contactPanel.style.width = "0";
+        }
+    });
+
+    // Close navbar after clicking on a link in toggle mode
+    navLinks.forEach(function(navLink) {
+        navLink.addEventListener('click', function() {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
         });
     });
 });
 
-const backToTopButton = document.getElementById('backToTop');
-const footer = document.querySelector('footer');
+document.addEventListener("DOMContentLoaded", function() {
+    const backToTopBtn = document.getElementById("back-to-top");
 
-window.onscroll = function () {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopButton.style.display = "block";
-    } else {
-        backToTopButton.style.display = "none";
-    }
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 300) {
+            document.body.classList.add("scrolled");
+        } else {
+            document.body.classList.remove("scrolled");
+        }
+    });
 
-    const footerRect = footer.getBoundingClientRect();
-    if (footerRect.top <= window.innerHeight) {
-        backToTopButton.style.display = "none";
-    }
-};
-backToTopButton.addEventListener('click', function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
-
-document.querySelector('form').addEventListener('submit', function (e) {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    if (name === '' || email === '' || message === '') {
-        alert('Please fill in all fields');
+    // Smooth scrolling for the Back to Top button
+    backToTopBtn.addEventListener("click", function(e) {
         e.preventDefault();
-    }
-});
-
-document.querySelectorAll('.me img').forEach(img => {
-    img.addEventListener('mouseover', () => {
-        img.classList.add('flipped');
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
-    img.addEventListener('mouseout', () => {
-        img.classList.remove('flipped');
-    });
-});
-
-const profileImage = document.getElementById('profileImage');
-const originalSrc = 'Images/Profilephoto1.jpg';
-const logoSrc = 'Images/LogoInitials.png';
-
-profileImage.addEventListener('mouseover', () => {
-    profileImage.src = logoSrc;
-});
-
-profileImage.addEventListener('mouseout', () => {
-    profileImage.src = originalSrc;
 });
