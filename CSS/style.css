@@ -183,17 +183,21 @@ body, html {
     padding-top: 60px;
 }
 
-/* Side Panel Styles */
 .contact-panel {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1000;
     top: 0;
-    left: 0;
+    left: -100%;
     background-color: #222;
     overflow-y: auto;
-    transition: width 0.5s ease;
+    transition: left 0.5s ease;
+}
+
+.contact-panel.show {
+    left: 0;
+    width: 250px;
 }
 
 .contact-panel-content {
@@ -234,7 +238,6 @@ body, html {
     transform: scale(1.1);
 }
 
-/* Button hover effects */
 .btn-primary:hover,
 .btn-outline-light:hover {
     background-color: #00bcd4;
@@ -245,7 +248,7 @@ body, html {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: #00bcd4; /* Matching hover color */
+    color: #00bcd4; 
     transition: color 0.3s ease;
 }
 
@@ -254,26 +257,216 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Back to Top Button Styles */
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .homepage, .about-section, .projects-section {
+        padding-top: 30px;
+    }
+
+    .homepage .row, .about-section .row, .projects-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .text-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .text-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .profile-image-right, .profile-image-left {
+        max-width: 70%;
+        max-height: 30vh;
+        margin: 0 auto 20px;
+    }
+
+    .about-content {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .project-image {
+        max-height: 120px;
+        margin: 0 auto;
+    }
+
+    .card-title, .card-text {
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
+
+    .contact-panel {
+        width: 180px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .homepage .row, .about-section .row, .projects-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content h1 {
+        font-size: 1.25rem;
+    }
+
+    .text-content h2 {
+        font-size: 1rem;
+    }
+
+    .profile-image-right, .profile-image-left {
+        max-width: 65%;
+        max-height: 25vh;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 0.8rem;
+    }
+
+    .projects-title {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+
+    .project-image {
+        max-height: 100px;
+    }
+
+    .card-title, .card-text {
+        font-size: 0.75rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .contact-panel {
+        width: 150px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 375px) {
+    .homepage, .about-section, .projects-section {
+        padding-top: 20px;
+    }
+
+    .homepage .row, .about-section .row, .projects-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content h1 {
+        font-size: 1rem;
+    }
+
+    .text-content h2 {
+        font-size: 0.85rem;
+    }
+
+    .profile-image-right, .profile-image-left {
+        max-width: 60%;
+        max-height: 20vh;
+    }
+
+    .about-content p {
+        font-size: 0.7rem;
+    }
+
+    .projects-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .project-image {
+        max-height: 90px;
+    }
+
+    .card-title, .card-text {
+        font-size: 0.65rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+
+    .contact-panel {
+        width: 130px;
+        padding: 6px;
+    }
+}
+
+/* Back-to-Top Button Styles */
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    padding: 10px 20px; 
     display: none;
     z-index: 1000;
-    font-size: 1rem;
+    background-color: #689f38;
+    color: #fff;
     text-align: center;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
-/* Show Back to Top button on scroll */
 body.scrolled .back-to-top {
     display: block;
 }
 
-/* Hover effect for Back to Top button */
 .back-to-top:hover {
     background-color: #00bcd4;
-    color: #fff;
     transform: scale(1.05);
-    transition: all 0.3s ease;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .back-to-top {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        bottom: 15px;
+        right: 15px;
+        border-radius: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-to-top {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 35px;
+    }
+}
+
+@media (max-width: 375px) {
+    .back-to-top {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        bottom: 5px;
+        right: 5px;
+        border-radius: 30px;
+    }
 }

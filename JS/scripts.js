@@ -3,29 +3,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById("logo");
     const contactLink = document.querySelector(".nav-link[href='#contact']");
     const closeBtn = document.querySelector(".close-btn");
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    // Define navLinks and navbarCollapse
+    const navLinks = document.querySelectorAll('.nav-link');
     const navbarCollapse = document.querySelector('.navbar-collapse');
 
     // Open panel when hovering over logo
     logo.addEventListener("mouseenter", function() {
-        contactPanel.style.width = "300px";
+        contactPanel.classList.add("show");
     });
 
     // Open panel when clicking the contact link
     contactLink.addEventListener("click", function(e) {
         e.preventDefault();
-        contactPanel.style.width = "300px";
+        contactPanel.classList.add("show");
     });
 
-    // Close panel when clicking the close button
+    // Close panel when clicking the close button or clicking outside the panel
     closeBtn.addEventListener("click", function() {
-        contactPanel.style.width = "0";
+        contactPanel.classList.remove("show");
     });
 
-    // Close panel when clicking outside of it
     document.addEventListener("click", function(event) {
         if (!contactPanel.contains(event.target) && !logo.contains(event.target) && !contactLink.contains(event.target)) {
-            contactPanel.style.width = "0";
+            contactPanel.classList.remove("show");
         }
     });
 
@@ -37,9 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    // Back to Top Button
     const backToTopBtn = document.getElementById("back-to-top");
 
     window.addEventListener("scroll", function() {
@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Smooth scrolling for the Back to Top button
     backToTopBtn.addEventListener("click", function(e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
